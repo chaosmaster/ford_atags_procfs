@@ -8,10 +8,10 @@ EXTRA_CFLAGS += -D__KERNEL__ -DKERNEL -DCONFIG_KEXEC -DCONFIG_ATAGS -DCONFIG_ATA
 # something appropriate to your phone
 # EXTRA_CFLAGS += -O0
 
-KERNEL = /mnt/mnt/kernel-build
+KERNEL ?= /mnt/mnt/kernel-build
 CONFIG = ford_cyanogenmod_defconfig
 ARCH		= arm
-CROSS_COMPILE = /mnt/mnt/cyanogen/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/bin/arm-eabi-
+CROSS_COMPILE ?= /mnt/mnt/cyanogen/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/bin/arm-eabi-
 
 obj-m += atagsproc.o
 atagsproc-objs := atags_proc.o #atags_parse.o
